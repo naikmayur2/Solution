@@ -7,6 +7,7 @@ import { refreshApex } from '@salesforce/apex';
 
 const columns = [
     { label: 'Name', fieldName: 'Name', type:'text', sortable: true,editable: true},
+    /*{ label: 'Account Name', fieldName: 'accountIdForURL', type: 'url', typeAttributes: { label: { fieldName: 'Name' }, target: '_blank' } },*/ 
     {
         label: 'Account Owner',
         fieldName: 'AccountOwner',
@@ -36,6 +37,7 @@ export default class DisplayfinancialServicesAccount extends LightningElement {
                 rowData.Phone = row.Phone;
                 rowData.Website = row.Website;
                 rowData.AnnualRevenue = row.AnnualRevenue;
+               // rowData.accountIdForURL = '/' + row.Id; 
                 if (row.Owner) {
                     rowData.AccountOwner = row.Owner.Name;
                 }
